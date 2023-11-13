@@ -1,6 +1,11 @@
 let playerScore = 0;
 let computerScore = 0;
 
+const resultElement = document.getElementById("result");
+const scoreElement = document.getElementById("score");
+
+const resetButton = document.getElementById("resetButton");
+resetButton.addEventListener("click", resetGame);
 
 function getComputerChoice() {
     let choices = ['rock', 'paper', 'scissors'];
@@ -27,8 +32,20 @@ function playRound(playerSelection, computerSelection) {
     }
 }
 
-const resultElement = document.getElementById("result");
-const scoreElement = document.getElementById("score");
+function resetGame() {
+    // Reset scores
+    playerScore = 0;
+    computerScore = 0;
+
+    // Clear result and score elements
+    resultElement.innerHTML = "";
+    scoreElement.textContent = "Player: 0 | Computer: 0";
+
+    // Enable buttons
+    rockButton.disabled = false;
+    paperButton.disabled = false;
+    scissorsButton.disabled = false;
+}
 
 function updateResult(result) {
     const resultText = document.createElement("p");
