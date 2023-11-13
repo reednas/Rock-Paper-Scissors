@@ -30,7 +30,7 @@
     height:40px;
     cursor: pointer;
 }
-
+/*Rock-Paper-Scissors*/
 #resetButton:hover {
     background-color: #27ae60;
 }
